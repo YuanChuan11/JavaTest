@@ -4,50 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.chuan</groupId>
+    <groupId>com.chuan.javalearning</groupId>
     <artifactId>java-learning</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>springcloudtest</module>
+        <module>zipkintest</module>
+    </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <zipkin.reporter2.version>3.3.0</zipkin.reporter2.version>
         <brave.version>5.18.1</brave.version>
         <zipkin.version>2.16.2</zipkin.version>
     </properties>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.zipkin.reporter2</groupId>
-                <artifactId>zipkin-reporter-bom</artifactId>
-                <version>${zipkin.reporter2.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.zipkin.brave</groupId>
-                <artifactId>brave-bom</artifactId>
-                <version>${brave.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <dependency>
-            <groupId>io.zipkin.zipkin2</groupId>
-            <artifactId>zipkin</artifactId>
-            <version>${zipkin.version}</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
         </dependency>
         <dependency>
-            <groupId>io.zipkin.brave</groupId>
-            <artifactId>brave</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.zipkin.reporter2</groupId>
-            <artifactId>zipkin-sender-okhttp3</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
         </dependency>
     </dependencies>
 

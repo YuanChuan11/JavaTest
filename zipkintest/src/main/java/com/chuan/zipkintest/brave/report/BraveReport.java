@@ -1,4 +1,4 @@
-package com.chuan.zipkintest.report.brave;
+package com.chuan.zipkintest.brave.report;
 
 
 import brave.Span;

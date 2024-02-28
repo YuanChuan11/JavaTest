@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chuan.javalearning</groupId>
+        <artifactId>java-learning</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.chuan.zipkintest</groupId>
+    <artifactId>zipkin-test</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.zipkin.reporter2</groupId>
+                <artifactId>zipkin-reporter-bom</artifactId>
+                <version>${zipkin.reporter2.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-bom</artifactId>
+                <version>${brave.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.zipkin.zipkin2</groupId>
+            <artifactId>zipkin</artifactId>
+            <version>${zipkin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave</artifactId>
+            <version>${brave.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-sender-okhttp3</artifactId>
+            <version>${zipkin.reporter2.version}</version>
+        </dependency>
+    </dependencies>
+</project>

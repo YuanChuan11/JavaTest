@@ -1,4 +1,4 @@
-package com.chuan.zipkintest.report.origin;
+package com.chuan.zipkintest.origin.report;
 
 import zipkin2.Endpoint;
 import zipkin2.Span;
