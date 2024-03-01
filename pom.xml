@@ -18,14 +18,15 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <zipkin.reporter2.version>3.3.0</zipkin.reporter2.version>
-        <brave.version>5.18.1</brave.version>
+        <brave.version>5.13.11</brave.version>
         <zipkin.version>2.16.2</zipkin.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.36</version>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.30</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -5,10 +5,12 @@ import brave.Tracer;
 import brave.Tracing;
 import brave.propagation.TraceContext;
 
-import javax.swing.plaf.synth.SynthUI;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author chuanjiang
+ */
 public class B3PropagationTest {
 
     public static void main(String[] args) {
@@ -16,9 +18,9 @@ public class B3PropagationTest {
                 .build();
         Map<String, String> carrier = new HashMap<>();
         TraceContext.Injector<Map<String, String>> injector = tracing.propagation()
-                .injector((map, key, value) -> map.put(key, value));
+                .injector(Map::put);
         TraceContext.Extractor<Map<String, String>> extractor = tracing.propagation()
-                .extractor((map, key) -> map.get(key));
+                .extractor(Map::get);
 
         Tracer tracer = tracing.tracer();
         Span parentSpan = tracer.nextSpan().name("parent-span").start();
