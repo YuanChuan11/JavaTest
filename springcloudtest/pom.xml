@@ -11,6 +11,24 @@
 
     <groupId>com.chuan.springcloudtest</groupId>
     <artifactId>spring-cloud-test</artifactId>
+    <!--默认打包类型是jar-->
+    <packaging>jar</packaging>
+
+    <build>
+        <!--默认打包名称是 artifactId+version -->
+        <finalName>springCloudTest</finalName>
+        <resources>
+            <resource>
+                <!--可以指定资源目录，是否打包，打包的过滤条件等，
+                比如mybits文件不在resources下不会被打包，因为默认情况下java目录下只会打class文件-->
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
+    </build>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -57,6 +75,5 @@
             <artifactId>spring-cloud-starter-zipkin</artifactId>
             <version>${spring.sleuth.zipkin}</version>
         </dependency>
-
     </dependencies>
 </project>

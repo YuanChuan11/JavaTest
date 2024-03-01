@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <!--路径名，不是项目名-->
         <module>springcloudtest</module>
         <module>zipkintest</module>
     </modules>
