@@ -9,29 +9,29 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <!--路径名，不是项目名-->
         <module>springcloudtest</module>
         <module>zipkintest</module>
+        <module>jaegertest</module>
     </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <zipkin.reporter2.version>3.3.0</zipkin.reporter2.version>
-        <brave.version>5.13.11</brave.version>
-        <zipkin.version>2.16.2</zipkin.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.30</version>
-            <scope>compile</scope>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 

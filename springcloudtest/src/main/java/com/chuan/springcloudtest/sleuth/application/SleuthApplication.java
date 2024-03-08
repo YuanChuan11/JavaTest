@@ -1,4 +1,4 @@
-package com.chuan.springcloudtest.application;
+package com.chuan.springcloudtest.sleuth.application;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

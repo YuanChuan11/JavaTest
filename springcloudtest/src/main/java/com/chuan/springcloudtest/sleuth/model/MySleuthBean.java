@@ -1,4 +1,4 @@
-package com.chuan.springcloudtest.model;
+package com.chuan.springcloudtest.sleuth.model;
 
 import brave.TracingCustomizer;
 import brave.propagation.CurrentTraceContext;
