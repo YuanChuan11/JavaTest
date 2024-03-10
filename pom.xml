@@ -13,6 +13,7 @@
         <module>springcloudtest</module>
         <module>zipkintest</module>
         <module>jaegertest</module>
+        <module>flink</module>
     </modules>
 
     <properties>
