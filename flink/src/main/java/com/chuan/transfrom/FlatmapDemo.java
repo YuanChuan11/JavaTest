@@ -1,6 +1,6 @@
 package com.chuan.transfrom;
 
-import com.atguigu.bean.WaterSensor;
+import com.chuan.bean.WaterSensor;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;

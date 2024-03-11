@@ -1,6 +1,6 @@
 package com.chuan.watermark;
 
-import com.atguigu.partition.MyPartitioner;
+import com.chuan.partition.MyPartitioner;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;

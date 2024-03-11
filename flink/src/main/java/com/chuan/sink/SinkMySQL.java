@@ -1,7 +1,7 @@
 package com.chuan.sink;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.flink.connector.jdbc.JdbcConnectionOptions;
 import org.apache.flink.connector.jdbc.JdbcExecutionOptions;
 import org.apache.flink.connector.jdbc.JdbcSink;

@@ -1,7 +1,7 @@
 package com.chuan.state;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.state.MapState;
 import org.apache.flink.api.common.state.MapStateDescriptor;
@@ -71,7 +71,6 @@ public class KeyedMapStateDemo {
                                 outStr.append("======================================\n");
 
                                 out.collect(outStr.toString());
-
 
 
 //                                vcCountMapState.get();          // 对本组的Map状态，根据key，获取value

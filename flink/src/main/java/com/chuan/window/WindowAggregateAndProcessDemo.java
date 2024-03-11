@@ -1,7 +1,7 @@
 package com.chuan.window;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
@@ -58,11 +58,10 @@ public class WindowAggregateAndProcessDemo {
         result.print();
 
 
-
         env.execute();
     }
 
-    public static class MyAgg implements AggregateFunction<WaterSensor, Integer, String>{
+    public static class MyAgg implements AggregateFunction<WaterSensor, Integer, String> {
 
         @Override
         public Integer createAccumulator() {
@@ -73,7 +72,7 @@ public class WindowAggregateAndProcessDemo {
 
         @Override
         public Integer add(WaterSensor value, Integer accumulator) {
-            System.out.println("调用add方法,value="+value);
+            System.out.println("调用add方法,value=" + value);
             return accumulator + value.getVc();
         }
 
@@ -91,7 +90,7 @@ public class WindowAggregateAndProcessDemo {
     }
 
     // 全窗口函数的输入类型 = 增量聚合函数的输出类型
-    public static class MyProcess extends ProcessWindowFunction<String,String,String,TimeWindow>{
+    public static class MyProcess extends ProcessWindowFunction<String, String, String, TimeWindow> {
 
         @Override
         public void process(String s, Context context, Iterable<String> elements, Collector<String> out) throws Exception {

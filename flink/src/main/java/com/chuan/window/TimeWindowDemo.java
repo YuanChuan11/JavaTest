@@ -1,7 +1,7 @@
 package com.chuan.window;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -84,33 +84,32 @@ public class TimeWindowDemo {
 }
 
 /**
- *  触发器、移除器： 现成的几个窗口，都有默认的实现，一般不需要自定义
- *
- *  以 时间类型的 滚动窗口 为例，分析原理：
-    TODO 1、窗口什么时候触发 输出？
-            时间进展 >= 窗口的最大时间戳（end - 1ms）
-
-    TODO 2、窗口是怎么划分的？
-            start= 向下取整，取窗口长度的整数倍
-            end = start + 窗口长度
-
-            窗口左闭右开 ==》 属于本窗口的 最大时间戳 = end - 1ms
-
-    TODO 3、窗口的生命周期？
-            创建： 属于本窗口的第一条数据来的时候，现new的，放入一个singleton单例的集合中
-            销毁（关窗）： 时间进展 >=  窗口的最大时间戳（end - 1ms） + 允许迟到的时间（默认0）
-
-
-
-    remainder = (timestamp - offset) % windowSize;
- ·  （13s - 0 ）% 10 = 3
-    （27s - 0 ）% 10 = 7
-    if (remainder < 0) {
-        return timestamp - (remainder + windowSize);
-    } else {
-        return timestamp - remainder;
-        13 -3 = 10
-        27 - 7 = 20
-    }
-
+ * 触发器、移除器： 现成的几个窗口，都有默认的实现，一般不需要自定义
+ * <p>
+ * 以 时间类型的 滚动窗口 为例，分析原理：
+ * TODO 1、窗口什么时候触发 输出？
+ * 时间进展 >= 窗口的最大时间戳（end - 1ms）
+ * <p>
+ * TODO 2、窗口是怎么划分的？
+ * start= 向下取整，取窗口长度的整数倍
+ * end = start + 窗口长度
+ * <p>
+ * 窗口左闭右开 ==》 属于本窗口的 最大时间戳 = end - 1ms
+ * <p>
+ * TODO 3、窗口的生命周期？
+ * 创建： 属于本窗口的第一条数据来的时候，现new的，放入一个singleton单例的集合中
+ * 销毁（关窗）： 时间进展 >=  窗口的最大时间戳（end - 1ms） + 允许迟到的时间（默认0）
+ * <p>
+ * <p>
+ * <p>
+ * remainder = (timestamp - offset) % windowSize;
+ * ·  （13s - 0 ）% 10 = 3
+ * （27s - 0 ）% 10 = 7
+ * if (remainder < 0) {
+ * return timestamp - (remainder + windowSize);
+ * } else {
+ * return timestamp - remainder;
+ * 13 -3 = 10
+ * 27 - 7 = 20
+ * }
  */

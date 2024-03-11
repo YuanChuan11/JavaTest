@@ -1,6 +1,6 @@
 package com.chuan.functions;
 
-import com.atguigu.bean.WaterSensor;
+import com.chuan.bean.WaterSensor;
 import org.apache.flink.api.common.functions.FilterFunction;
 
 /**

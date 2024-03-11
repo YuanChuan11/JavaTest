@@ -1,6 +1,6 @@
 package com.chuan.aggreagte;
 
-import com.atguigu.bean.WaterSensor;
+import com.chuan.bean.WaterSensor;
 import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
@@ -25,8 +25,6 @@ public class SimpleAggregateDemo {
                 new WaterSensor("s2", 2L, 2),
                 new WaterSensor("s3", 3L, 3)
         );
-
-
 
 
         KeyedStream<WaterSensor, String> sensorKS = sensorDS

@@ -1,6 +1,6 @@
 package com.chuan.functions;
 
-import com.atguigu.bean.WaterSensor;
+import com.chuan.bean.WaterSensor;
 import org.apache.flink.api.common.functions.MapFunction;
 
 /**
@@ -9,7 +9,7 @@ import org.apache.flink.api.common.functions.MapFunction;
  * @author cjp
  * @version 1.0
  */
-public class WaterSensorMapFunction implements MapFunction<String,WaterSensor> {
+public class WaterSensorMapFunction implements MapFunction<String, WaterSensor> {
     @Override
     public WaterSensor map(String value) throws Exception {
         String[] datas = value.split(",");

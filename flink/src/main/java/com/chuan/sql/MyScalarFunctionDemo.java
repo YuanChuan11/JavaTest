@@ -1,6 +1,6 @@
 package com.chuan.sql;
 
-import com.atguigu.bean.WaterSensor;
+import com.chuan.bean.WaterSensor;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.annotation.DataTypeHint;
@@ -47,17 +47,16 @@ public class MyScalarFunctionDemo {
 
         // 3.2 table api用法
         sensorTable
-                .select(call("HashFunction",$("id")))
+                .select(call("HashFunction", $("id")))
                 .execute()
                 .print();
-
 
 
     }
 
 
     // TODO 1.定义 自定义函数的实现类
-    public static  class HashFunction extends ScalarFunction{
+    public static class HashFunction extends ScalarFunction {
 
         // 接受任意类型的输入，返回 INT型输出
         public int eval(@DataTypeHint(inputGroup = InputGroup.ANY) Object o) {

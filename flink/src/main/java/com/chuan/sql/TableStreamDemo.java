@@ -1,6 +1,6 @@
 package com.chuan.sql;
 
-import com.atguigu.bean.WaterSensor;
+import com.chuan.bean.WaterSensor;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.Table;
@@ -39,7 +39,7 @@ public class TableStreamDemo {
         // 2.1 追加流
         tableEnv.toDataStream(filterTable, WaterSensor.class).print("filter");
         // 2.2 changelog流(结果需要更新)
-        tableEnv.toChangelogStream(sumTable ).print("sum");
+        tableEnv.toChangelogStream(sumTable).print("sum");
 
 
         // 只要代码中调用了 DataStreamAPI，就需要 execute，否则不需要

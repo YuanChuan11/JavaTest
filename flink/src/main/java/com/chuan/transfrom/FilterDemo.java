@@ -1,7 +1,7 @@
 package com.chuan.transfrom;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.FilterFunctionImpl;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.FilterFunctionImpl;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

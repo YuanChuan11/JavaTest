@@ -1,7 +1,7 @@
 package com.chuan.process;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.streaming.api.TimerService;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
@@ -68,7 +68,6 @@ public class KeyedProcessTimerDemo {
                         // 3、获取 process的 当前watermark
 //                        long currentWatermark = timerService.currentWatermark();
 //                        System.out.println("当前数据=" + value + ",当前watermark=" + currentWatermark);
-
 
 
                         // 注册定时器： 处理时间、事件时间

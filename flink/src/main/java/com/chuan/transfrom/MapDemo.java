@@ -1,7 +1,7 @@
 package com.chuan.transfrom;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.MapFunctionImpl;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.MapFunctionImpl;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -46,7 +46,7 @@ public class MapDemo {
         env.execute();
     }
 
-    public static class MyMapFunction implements MapFunction<WaterSensor,String>{
+    public static class MyMapFunction implements MapFunction<WaterSensor, String> {
 
         @Override
         public String map(WaterSensor value) throws Exception {

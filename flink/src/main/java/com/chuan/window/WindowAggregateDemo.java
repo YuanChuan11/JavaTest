@@ -1,7 +1,7 @@
 package com.chuan.window;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -65,7 +65,7 @@ public class WindowAggregateDemo {
                      */
                     @Override
                     public Integer add(WaterSensor value, Integer accumulator) {
-                        System.out.println("调用add方法,value="+value);
+                        System.out.println("调用add方法,value=" + value);
                         return accumulator + value.getVc();
                     }
 

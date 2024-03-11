@@ -1,7 +1,7 @@
 package com.chuan.split;
 
-import com.atguigu.bean.WaterSensor;
-import com.atguigu.functions.WaterSensorMapFunction;
+import com.chuan.bean.WaterSensor;
+import com.chuan.functions.WaterSensorMapFunction;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.datastream.SideOutputDataStream;
@@ -91,7 +91,5 @@ public class SideOutputDemo {
 }
 
 /**
-
-
-
+ *
  */
