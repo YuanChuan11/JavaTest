@@ -2,6 +2,7 @@ package com.chuan.jaegertest.opentracing.context;
 
 import com.chuan.jaegertest.config.JaegerConfig;
 import io.jaegertracing.Configuration;
+import io.jaegertracing.internal.propagation.B3TextMapCodec;
 import io.opentracing.Span;
 import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
@@ -15,8 +16,14 @@ import java.util.Map;
  */
 public class InjectTest {
 
-    // 将span上下文注入到map中
+    /**
+     * 通过配置绑定协议和格式，协议有w3c b3 jaeger，格式有text http-header binary
+     * {@link JaegerConfig#getCodecConfig()} (String)}
+     * <p>
+     * 将span上下文注入到map中
+     */
     public static void injectContext2Map() {
+
         Configuration configuration = JaegerConfig.getConfiguration("inject-demo");
 
         Tracer tracer = configuration.getTracer();

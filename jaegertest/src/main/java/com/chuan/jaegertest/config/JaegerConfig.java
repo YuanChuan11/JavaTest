@@ -46,6 +46,8 @@ public class JaegerConfig {
      * 默认是jaeger格式(uber-开头)
      * 可设置为w3c格式(traceparent=00-0000000000000000a0697c5c67d8c9b4-a0697c5c67d8c9b4-01)
      * 可设置为b3格式(X-B3-开头) zipkin用
+     * <p>
+     * withPropagation方法会自动绑定格式和协议
      *
      * @return codec
      */
